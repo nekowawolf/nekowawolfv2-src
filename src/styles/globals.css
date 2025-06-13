@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --body-color: #111827;
+  --fill-color: #ffffff;
+  --card-color: #1a2540;
+  --border-color: #959090;
+  --card-color2: #161e34d7;
+}
+
+.darkmode {
+  --body-color: #93c5fd;
+  --fill-color: #111528;
+  --card-color: #ffffff;
+  --border-color: #000000;
+  --card-color2: #20325c39;
+}
+
+body {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+}
+
+.body-color {
+  background-color: var(--body-color);
+}
+
+.card-color {
+  background-color: var(--card-color);
+}
+
+.text-fill-color {
+  color: var(--fill-color);
+}
+
+.border-color {
+  border: 1px solid var(--border-color);
+}
+
+.card-color2 {
+  background-color: var(--card-color2);
+}
