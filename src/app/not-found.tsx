@@ -65,7 +65,7 @@ export default function NotFound() {
         <img
           src="/img/nww.png"
           alt="Wolf Logo"
-          className="w-10 mt-7 h-auto mx-auto"
+          className="w-10 mt-2 h-auto mx-auto"
         />
       </a>
 
