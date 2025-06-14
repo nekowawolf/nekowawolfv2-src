@@ -65,14 +65,14 @@ export default function NotFound() {
         <img
           src="/img/nww.png"
           alt="Wolf Logo"
-          className="w-10 h-auto mx-auto mt-7"
+          className="w-10 mt-7 h-auto mx-auto"
         />
       </a>
 
       <img
         src="/img/blue5.png"
         alt=""
-        className="w-52 sm:w-48 bg-center sm:ml-10 ml-7 h-auto mx-auto fixed -bottom-13 sm:-bottom-24"
+        className="w-52 sm:w-48 bg-center sm:ml-10 ml-7 mt-7 h-auto mx-auto fixed -bottom-16 sm:-bottom-24"
       />
     </div>
 
