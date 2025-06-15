@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/crypto-community/:path*",
+      "source": "/community-list/:path*",
       "destination": "https://crypto-communityv2-src.vercel.app/:path*"
     }
   ]
