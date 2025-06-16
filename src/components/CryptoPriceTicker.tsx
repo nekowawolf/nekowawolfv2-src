@@ -14,6 +14,7 @@ export default function CryptoPriceTicker() {
   const animationRef = useRef<number>(0);
   const positionXRef = useRef<number>(0);
   const [data, setData] = useState<CoinData | null>(null);
+  const [hasMounted, setHasMounted] = useState(false);
 
   const assets = [
     { key: 'btc', label: 'BTC' },
@@ -25,6 +26,12 @@ export default function CryptoPriceTicker() {
   ];
 
   useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!hasMounted) return;
+
     const fetchPrices = async () => {
       try {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/airdrop/price`);
@@ -59,7 +66,6 @@ export default function CryptoPriceTicker() {
 
     fetchPrices();
     const interval = setInterval(fetchPrices, 60000);
-
     const timeout = setTimeout(() => startAnimation(), 1000);
 
     return () => {
@@ -67,7 +73,9 @@ export default function CryptoPriceTicker() {
       clearTimeout(timeout);
       cancelAnimationFrame(animationRef.current);
     };
-  }, []);
+  }, [hasMounted]);
+
+  if (!hasMounted) return null;
 
   return (
     <div className="overflow-hidden w-full relative h-full flex items-center">
