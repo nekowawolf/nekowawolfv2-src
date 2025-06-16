@@ -14,7 +14,7 @@ export default function CryptoPriceTicker() {
   const animationRef = useRef<number>(0);
   const positionXRef = useRef<number>(0);
   const [data, setData] = useState<CoinData | null>(null);
-  const [hasMounted, setHasMounted] = useState(false);
+  const [isReady, setIsReady] = useState(false);
 
   const assets = [
     { key: 'btc', label: 'BTC' },
@@ -26,22 +26,28 @@ export default function CryptoPriceTicker() {
   ];
 
   useEffect(() => {
-    setHasMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!hasMounted) return;
-
     const fetchPrices = async () => {
       try {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/airdrop/price`);
         if (!response.ok) throw new Error('Failed to fetch data');
         const result = await response.json();
         setData(result);
+        setIsReady(true);
       } catch (error) {
         console.error('Error fetching price data:', error);
       }
     };
+
+    fetchPrices();
+    const interval = setInterval(fetchPrices, 60000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isReady || !data || !tickerRef.current) return;
 
     const startAnimation = () => {
       if (!tickerRef.current) return;
@@ -51,31 +57,25 @@ export default function CryptoPriceTicker() {
       positionXRef.current = 0;
 
       const animate = () => {
+        if (!tickerRef.current) return;
+        
         positionXRef.current -= 0.5;
         if (positionXRef.current <= -tickerWidth) {
           positionXRef.current = 0;
         }
-        if (tickerRef.current) {
-          tickerRef.current.style.transform = `translateX(${positionXRef.current}px)`;
-        }
+        tickerRef.current.style.transform = `translateX(${positionXRef.current}px)`;
         animationRef.current = requestAnimationFrame(animate);
       };
 
       animationRef.current = requestAnimationFrame(animate);
     };
 
-    fetchPrices();
-    const interval = setInterval(fetchPrices, 60000);
-    const timeout = setTimeout(() => startAnimation(), 1000);
+    startAnimation();
 
     return () => {
-      clearInterval(interval);
-      clearTimeout(timeout);
       cancelAnimationFrame(animationRef.current);
     };
-  }, [hasMounted]);
-
-  if (!hasMounted) return null;
+  }, [isReady, data]);
 
   return (
     <div className="overflow-hidden w-full relative h-full flex items-center">
