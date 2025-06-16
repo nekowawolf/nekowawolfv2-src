@@ -28,7 +28,7 @@ export default function Home() {
             <SocialLinks />
             
             <div className="flex flex-col gap-3 sm:gap-4 flex-1">
-              <div className="card-color border border-color rounded-md p-3 sm:p-4 text-fill-color text-xs sm:text-[13px] leading-tight h-full">
+              <div className="w-full sm:min-w-[500px] card-color border border-color rounded-md p-3 sm:p-4 text-fill-color text-xs sm:text-[13px] leading-tight h-full">
                 <h2 className="font-semibold mb-2 mt-0 sm:mt-3 text-sm sm:text-[14px]">
                   About Me
                 </h2>
@@ -41,13 +41,13 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full max-w-[525px] h-10 card-color border border-color rounded-md p-2 sm:p-3 text-[11px] sm:text-[12px] text-fill-color flex items-center overflow-hidden">
+              <div className="w-full max-w-[640px] h-10 card-color border border-color rounded-md p-2 sm:p-3 text-[11px] sm:text-[12px] text-fill-color flex items-center overflow-hidden">
                 <CryptoPriceTicker />
               </div>
             </div>
           </div>
 
-          <div className="rounded-md w-full md:w-[600px] h-[180px] sm:h-[215px]">
+          <div className="rounded-md w-full md:w-[600px] h-[140px] sm:h-[180px] md:h-[215px]">
             <img
               src="https://media1.tenor.com/m/nM1Gd8L4ayYAAAAd/rina-tennoji-love-live.gif"
               alt="Profile Image"
