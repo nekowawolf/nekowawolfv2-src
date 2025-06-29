@@ -1,9 +1,8 @@
 {
-  "redirects": [
+  "rewrites": [
     {
-      "source": "/community-list",
-      "destination": "https://cmty.nekowawolf.xyz",
-      "permanent": true
+      "source": "/community-list/:path*",
+      "destination": "https://crypto-communityv2-src.vercel.app/community-list/:path*"
     }
   ]
 }
