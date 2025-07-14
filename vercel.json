@@ -4,6 +4,11 @@
       "source": "/community-list",
       "destination": "https://cmty.nekowawolf.xyz",
       "permanent": true
+    },
+     {
+      "source": "/airdrop",
+      "destination": "https://airdrop.nekowawolf.xyz",
+      "permanent": true
     }
   ]
 }
