@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface CoinData {
   [key: string]: {
@@ -10,9 +10,6 @@ interface CoinData {
 }
 
 export default function CryptoPriceTicker() {
-  const tickerRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number>(0);
-  const positionXRef = useRef<number>(0);
   const [data, setData] = useState<CoinData | null>(null);
   const [isReady, setIsReady] = useState(false);
 
@@ -40,71 +37,64 @@ export default function CryptoPriceTicker() {
 
     fetchPrices();
     const interval = setInterval(fetchPrices, 60000);
-
-    return () => {
-      clearInterval(interval);
-    };
+    return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    if (!isReady || !data || !tickerRef.current) return;
-
-    const startAnimation = () => {
-      if (!tickerRef.current) return;
-
-      cancelAnimationFrame(animationRef.current);
-      const tickerWidth = tickerRef.current.scrollWidth / 2;
-      positionXRef.current = 0;
-
-      const animate = () => {
-        if (!tickerRef.current) return;
-        
-        positionXRef.current -= 0.5;
-        if (positionXRef.current <= -tickerWidth) {
-          positionXRef.current = 0;
-        }
-        tickerRef.current.style.transform = `translateX(${positionXRef.current}px)`;
-        animationRef.current = requestAnimationFrame(animate);
-      };
-
-      animationRef.current = requestAnimationFrame(animate);
-    };
-
-    startAnimation();
-
-    return () => {
-      cancelAnimationFrame(animationRef.current);
-    };
-  }, [isReady, data]);
-
   return (
-    <div className="overflow-hidden w-full relative h-full flex items-center">
-      <div
-        ref={tickerRef}
-        className="absolute flex whitespace-nowrap gap-6 will-change-transform items-center"
-      >
-        {assets.concat(assets).map((asset, index) => {
-          const coin = data?.[asset.key];
-          if (!coin || !coin.price_usd) return null;
+    <div className="relative w-full h-full overflow-hidden flex items-center">
+      {isReady && data && (
+        <div className="ticker-inner flex items-center h-full">
+          {assets.concat(assets).map((asset, index) => {
+            const coin = data?.[asset.key];
+            if (!coin || !coin.price_usd) return null;
 
-          const price = parseFloat(coin.price_usd).toLocaleString();
-          const percentChange = parseFloat(coin.percent_change_24h);
-          const formattedChange = percentChange.toFixed(2);
-          const percentClass = percentChange >= 0 ? 'text-green-500' : 'text-red-500';
-          const symbol = percentChange >= 0 ? '+' : '';
+            const price = parseFloat(coin.price_usd).toLocaleString();
+            const percentChange = parseFloat(coin.percent_change_24h);
+            const formattedChange = percentChange.toFixed(2);
+            const percentClass = percentChange >= 0 ? 'text-green-500' : 'text-red-500';
+            const symbol = percentChange >= 0 ? '+' : '';
 
-          return (
-            <span key={`${asset.key}-${index}`} className="shrink-0 text-nowrap">
-              {asset.label}:{' '}
-              <span className="font-semibold">${price}</span>, 24h:{' '}
-              <span className={`${percentClass} font-semibold`}>
-                {symbol}
-                {formattedChange}%
+            return (
+              <span
+                key={`${asset.key}-${index}`}
+                className="ticker-item flex items-center h-full"
+                style={{ lineHeight: '1' }}
+              >
+                {asset.label}:{' '}
+                <span className="font-semibold ml-2">${price},</span>
+                <span className="ml-2">24h:</span>
+                <span className={`ml-2 ${percentClass} font-semibold`}>
+                  {symbol}
+                  {formattedChange}%
+                </span>
               </span>
-            </span>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      )}
+
+      <style jsx>{`
+        .ticker-inner {
+          position: absolute;
+          display: inline-flex;
+          white-space: nowrap;
+          animation: tickerScroll 30s linear infinite;
+        }
+
+        .ticker-item {
+          flex-shrink: 0;
+          padding: 0 0.75rem;
+        }
+
+        @keyframes tickerScroll {
+          from {
+            transform: translateX(0%);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </div>
   );
 }
