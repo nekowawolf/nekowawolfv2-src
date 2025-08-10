@@ -30,7 +30,7 @@ export default function StatsCard({ title, link, description, count }: StatsCard
       <p className="text-xs md:text-sm text-fill-color/80 leading-relaxed mb-3">
         {description}
       </p>
-      <div className="flex items-center justify-end text-[11px] text-fill-color/60 border-t border-white/10 pt-2">
+      <div className="flex items-center justify-end text-[11px] text-fill-color/60 border-t border-divider pt-2">
         <div className="flex items-center gap-1">
           <span>{count}</span>
         </div>
