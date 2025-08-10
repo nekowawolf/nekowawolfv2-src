@@ -25,7 +25,7 @@ export default function SocialLinks() {
     <div className="flex flex-row sm:flex-col gap-3 sm:gap-2 justify-center sm:justify-start px-0 sm:px-0">
       <button
         id="theme-switch"
-        className="card-color w-20 h-12 sm:w-12 sm:h-12 rounded-md border border-color flex justify-center items-center text-fill-color text-xl gap-1"
+        className="card-color w-full h-12 sm:w-12 sm:h-12 rounded-md border border-color flex justify-center items-center text-fill-color text-xl gap-1"
       >
         {isDarkMode ? (
           <i className="fas fa-sun text-fill-color text-xl" />
@@ -38,7 +38,7 @@ export default function SocialLinks() {
         href="https://x.com/intent/follow?screen_name=0xNekowawolf"
         target="_blank"
         rel="noopener noreferrer"
-        className="card-color w-20 h-12 sm:w-12 sm:h-12 rounded-md border border-color flex justify-center items-center text-fill-color text-xl"
+        className="card-color w-full h-12 sm:w-12 sm:h-12 rounded-md border border-color flex justify-center items-center text-fill-color text-xl"
       >
         {/* X Logo */}
         <svg
@@ -63,7 +63,7 @@ export default function SocialLinks() {
         href="https://www.youtube.com/watch?v=IejbZAHcf4g"
         target="_blank"
         rel="noopener noreferrer"
-        className="card-color w-20 h-12 sm:w-12 sm:h-12 rounded-md border border-color flex justify-center items-center text-fill-color text-xl"
+        className="card-color w-full h-12 sm:w-12 sm:h-12 rounded-md border border-color flex justify-center items-center text-fill-color text-xl"
       >
         <i className="fab fa-linkedin text-fill-color"></i>
       </a>
@@ -72,7 +72,7 @@ export default function SocialLinks() {
         href="https://github.com/nekowawolf"
         target="_blank"
         rel="noopener noreferrer"
-        className="card-color w-20 h-12 sm:w-12 sm:h-12 rounded-md border border-color flex justify-center items-center text-fill-color text-xl"
+        className="card-color w-full h-12 sm:w-12 sm:h-12 rounded-md border border-color flex justify-center items-center text-fill-color text-xl"
       >
         <i className="fab fa-github text-fill-color"></i>
       </a>
