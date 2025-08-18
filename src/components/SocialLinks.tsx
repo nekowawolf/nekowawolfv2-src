@@ -28,9 +28,9 @@ export default function SocialLinks() {
         className="card-color w-full h-12 sm:w-12 sm:h-12 rounded-md border border-color flex justify-center items-center text-fill-color text-xl gap-1"
       >
         {isDarkMode ? (
-          <i className="fas fa-sun text-fill-color text-xl" />
-        ) : (
           <i className="fas fa-moon text-fill-color text-xl" />
+        ) : (
+          <i className="fas fa-sun text-fill-color text-xl" />
         )}
       </button>
 
@@ -40,23 +40,7 @@ export default function SocialLinks() {
         rel="noopener noreferrer"
         className="card-color w-full h-12 sm:w-12 sm:h-12 rounded-md border border-color flex justify-center items-center text-fill-color text-xl"
       >
-        {/* X Logo */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          shapeRendering="geometricPrecision"
-          textRendering="geometricPrecision"
-          imageRendering="optimizeQuality"
-          fill="currentColor"
-          fillRule="evenodd"
-          clipRule="evenodd"
-          viewBox="0 0 512 462.799"
-          className="w-5 h-5 text-fill-color"
-        >
-          <path
-            fillRule="nonzero"
-            d="M403.229 0h78.506L310.219 196.04 512 462.799H354.002L230.261 301.007 88.669 462.799h-78.56l183.455-209.683L0 0h161.999l111.856 147.88L403.229 0zm-27.556 415.805h43.505L138.363 44.527h-46.68l283.99 371.278z"
-          />
-        </svg>
+        <i className="fa-brands fa-x-twitter text-fill-color"></i>
       </a>
 
       <a
