@@ -5,6 +5,7 @@ import SocialLinks from '@/components/SocialLinks';
 import GasTracker from '@/components/GasTracker';
 import FearAndGreed from '@/components/FearAndGreed';
 import CryptoPriceTicker from '@/components/CryptoPriceTicker';
+import ImageSwitcher from '@/components/ImageSwitcher';
 import StatsCard from '@/components/StatsCard';
 import { fetchStats } from '@/utils/fetchStats';
 
@@ -58,10 +59,11 @@ export default function Home() {
 
         <div className="flex flex-col md:flex-row gap-4 sm:gap-6">
           <div className="w-full md:w-[250px] h-[180px] sm:h-[215px] md:h-auto">
-            <img
-              src="https://avatars.githubusercontent.com/u/113094795?s=400&u=09f3e0e5f27350cd376caa27f7aa65cf46c9384c&v=4"
+            <ImageSwitcher
               alt="Profile Image 2"
-              className="rounded-md w-full h-full object-cover"
+              className="rounded-md w-full h-full object-cover border border-color"
+              darkSrc="/img/neko1.png"
+              lightSrc="/img/neko2.png"
             />
           </div>
 
