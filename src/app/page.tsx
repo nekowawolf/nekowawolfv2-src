@@ -6,6 +6,7 @@ import GasTracker from '@/components/GasTracker';
 import FearAndGreed from '@/components/FearAndGreed';
 import CryptoPriceTicker from '@/components/CryptoPriceTicker';
 import ImageSwitcher from '@/components/ImageSwitcher';
+import GifSwitcher from '@/components/GifSwitcher';
 import StatsCard from '@/components/StatsCard';
 import { fetchStats } from '@/utils/fetchStats';
 
@@ -48,11 +49,12 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="rounded-md w-full md:w-[600px] h-[140px] sm:h-[180px] md:h-[215px]">
-            <img
-              src="https://media1.tenor.com/m/nM1Gd8L4ayYAAAAd/rina-tennoji-love-live.gif"
-              alt="Profile Image"
+          <div className="rounded-md w-full md:w-[600px] h-[140px] sm:h-[180px] md:h-[215px] border border-color overflow-hidden">
+            <GifSwitcher
+              alt="Profile Gif"
               className="rounded-md w-full h-full object-cover"
+              darkSrc="https://i.pinimg.com/originals/d3/63/d6/d363d683a7fee575c7431764bc83e094.gif" 
+              lightSrc="https://i.pinimg.com/originals/eb/cc/2b/ebcc2bbe06889c7b104786ea1a189622.gif"
             />
           </div>
         </div>
