@@ -5,7 +5,6 @@ import SocialLinks from '@/components/SocialLinks';
 import GasTracker from '@/components/GasTracker';
 import FearAndGreed from '@/components/FearAndGreed';
 import CryptoPriceTicker from '@/components/CryptoPriceTicker';
-import ImageSwitcher from '@/components/ImageSwitcher';
 import GifSwitcher from '@/components/GifSwitcher';
 import StatsCard from '@/components/StatsCard';
 import { fetchStats } from '@/utils/fetchStats';
@@ -51,7 +50,7 @@ export default function Home() {
 
           <div className="rounded-md w-full md:w-[600px] h-[140px] sm:h-[180px] md:h-[215px] border border-color overflow-hidden">
             <GifSwitcher
-              alt="Profile Gif"
+              alt="Gif"
               className="rounded-md w-full h-full object-cover"
               darkSrc="https://i.pinimg.com/originals/d3/63/d6/d363d683a7fee575c7431764bc83e094.gif" 
               lightSrc="https://i.pinimg.com/originals/eb/cc/2b/ebcc2bbe06889c7b104786ea1a189622.gif"
@@ -60,12 +59,11 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col md:flex-row gap-4 sm:gap-6">
-          <div className="w-full md:w-[250px] h-[180px] sm:h-[215px] md:h-auto">
-            <ImageSwitcher
-              alt="Profile Image 2"
-              className="rounded-md w-full h-full object-cover border border-color"
-              darkSrc="/img/neko1.png"
-              lightSrc="/img/neko2.png"
+          <div className="w-full card-color md:w-[250px] h-[180px] sm:h-[215px] md:h-auto rounded-md border border-color overflow-hidden">
+            <img
+              src="/img/neko.png"
+              alt="Profile Image"
+             className="w-[200px] sm:w-[230px] md:w-full h-full object-cover mx-auto md:mx-0"
             />
           </div>
 
