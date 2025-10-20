@@ -21,7 +21,7 @@ export default function GasTracker({ onTimerUpdate }: GasTrackerProps) {
   const fetchGasData = async () => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_ETHERSCAN_API_URL}?module=gastracker&action=gasoracle&apikey=${process.env.NEXT_PUBLIC_ETHERSCAN_API_KEY}`
+        `${process.env.NEXT_PUBLIC_ETHERSCAN_API_URL}/v2/api?chainid=1&module=gastracker&action=gasoracle&apikey=${process.env.NEXT_PUBLIC_ETHERSCAN_API_KEY}`
       );
       const data = await response.json();
 
