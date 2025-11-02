@@ -35,7 +35,7 @@ export default function SocialLinks() {
       </button>
 
       <a
-        href="https://x.com/intent/follow?screen_name=0xNekowawolf"
+        href="https://x.com/intent/follow?screen_name=nekowawolf_"
         target="_blank"
         rel="noopener noreferrer"
         className="card-color w-full h-12 sm:w-12 sm:h-12 rounded-md border border-color flex justify-center items-center text-fill-color text-xl"
