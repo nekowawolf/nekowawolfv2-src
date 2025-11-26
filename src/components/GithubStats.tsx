@@ -8,7 +8,7 @@ export default function GithubStats({ username }: GithubStatsProps) {
   const customTitle = `${username}'s GitHub Stats`;
 
   const url =
-    `https://github-readme-stats.vercel.app/api` +
+    `https://github-readme-stats-eta-one-93.vercel.app/api` +
     `?username=${username}` +
     `&show_icons=true` +
     `&theme=blue_navy` +
