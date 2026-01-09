@@ -30,15 +30,22 @@ export default function Home() {
             
             <div className="flex flex-col gap-3 sm:gap-4 flex-1">
               <div className="w-full sm:min-w-[500px] card-color border border-color rounded-md p-3 sm:p-4 text-fill-color text-xs sm:text-[13px] leading-tight h-full">
-                <h2 className="font-semibold mb-2 mt-0 sm:mt-3 text-sm sm:text-[14px]">
+                
+                <h2 className="font-semibold mb-2 mt-0 sm:mt-3 text-sm sm:text-[14px] relative inline-block">
                   About Me
+                  <span className="block w-16 h-[3px] bg-blue-500 mt-1 rounded"></span>
                 </h2>
-                <p>
-                  Hi, I am an Informatics Engineering student with expertise in
-                  Golang, SQL, PostgreSQL, MongoDB, Tailwind CSS, and frontend
-                  development. Additionally, I have experience in UI/UX design
-                  using Figma and Canva. I am also interested in Web3, crypto, and
-                  airdrop.
+
+                <p className="opacity-90">
+                   I am a Full-Stack Developer and Graphic Designer experienced in Golang, Next.js, and Laravel, with a focus on modern web development, UI/UX design, and visual design using Figma and Photoshop, and an interest in Web3 and crypto.{" "}
+                  <a
+                    href="https://portfolio.nekowawolf.xyz/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline font-medium"
+                  >
+                    Learn more
+                  </a>
                 </p>
               </div>
 
