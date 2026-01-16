@@ -99,7 +99,7 @@ export default function Home() {
 
             <StatsCard 
               title="Airdrop" 
-              link="https://airdrop.nekowawolf.xyz" 
+              link="https://airdrop.nekowawolf.xyz/" 
               description="Curated list of ongoing airdrops sourced from verified channels, X (Twitter), Medium, and official announcements."
               count={stats.airdropCount}
             />
