@@ -106,7 +106,7 @@ export default function Home() {
 
             <StatsCard 
               title="Community" 
-              link="https://nekowawolf.xyz/community-list/" 
+              link="https://cc.nekowawolf.xyz/" 
               description="Curated list of crypto communities you can join, sourced from trusted platforms, forums, and official groups."
               count={stats.communityCount}
             />
