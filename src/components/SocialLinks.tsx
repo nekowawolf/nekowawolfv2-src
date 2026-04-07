@@ -35,12 +35,12 @@ export default function SocialLinks() {
       </button>
 
       <a
-        href="https://x.com/intent/follow?screen_name=nekowawolf_"
+        href="https://link.nekowawolf.xyz/"
         target="_blank"
         rel="noopener noreferrer"
         className="card-color w-full h-12 sm:w-12 sm:h-12 rounded-md border border-color flex justify-center items-center text-fill-color text-xl"
       >
-        <i className="fa-brands fa-x-twitter text-fill-color"></i>
+        <i className="fa-solid fa-link text-fill-color"></i>
       </a>
 
       <a
