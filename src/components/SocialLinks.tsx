@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { toggleDarkMode } from '@/utils/darkmode';
+import { FaMoon, FaSun, FaLink, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 export default function SocialLinks() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -28,9 +29,9 @@ export default function SocialLinks() {
         className="card-color w-full h-12 sm:w-12 sm:h-12 rounded-md border border-color flex justify-center items-center text-fill-color text-xl gap-1"
       >
         {isDarkMode ? (
-          <i className="fas fa-moon text-fill-color text-xl" />
+          <FaMoon className="text-fill-color text-xl" size={21} />
         ) : (
-          <i className="fas fa-sun text-fill-color text-xl" />
+          <FaSun className="text-fill-color text-xl" size={21} />
         )}
       </button>
 
@@ -40,7 +41,7 @@ export default function SocialLinks() {
         rel="noopener noreferrer"
         className="card-color w-full h-12 sm:w-12 sm:h-12 rounded-md border border-color flex justify-center items-center text-fill-color text-xl"
       >
-        <i className="fa-solid fa-link text-fill-color"></i>
+        <FaLink className="text-fill-color" size={21} />
       </a>
 
       <a
@@ -49,7 +50,7 @@ export default function SocialLinks() {
         rel="noopener noreferrer"
         className="card-color w-full h-12 sm:w-12 sm:h-12 rounded-md border border-color flex justify-center items-center text-fill-color text-xl"
       >
-        <i className="fab fa-linkedin text-fill-color"></i>
+        <FaLinkedin className="text-fill-color" size={21} />
       </a>
 
       <a
@@ -58,7 +59,7 @@ export default function SocialLinks() {
         rel="noopener noreferrer"
         className="card-color w-full h-12 sm:w-12 sm:h-12 rounded-md border border-color flex justify-center items-center text-fill-color text-xl"
       >
-        <i className="fab fa-github text-fill-color"></i>
+        <FaGithub className="text-fill-color" size={21} />
       </a>
     </div>
   );

@@ -14,7 +14,6 @@ export default function RootLayout({
       <head>
         <title>nekowawolf</title>
         <link rel="shortcut icon" href="/favicon.ico" />
-        <script src="https://kit.fontawesome.com/2ff8362c80.js" crossOrigin="anonymous"></script>
         <script dangerouslySetInnerHTML={{
           __html: `(function() {
             if (localStorage.getItem("darkmode") === "active") {

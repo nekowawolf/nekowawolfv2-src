@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 interface StatsCardProps {
   title: string;
@@ -20,7 +21,7 @@ export default function StatsCard({ title, link, description, count }: StatsCard
             className="text-fill-color/70 hover:text-fill-color transition-colors"
             aria-label={`${title} external link`}
           >
-            <i className="fas fa-external-link-alt text-xs"></i>
+            <FaExternalLinkAlt className="text-xs" />
           </Link>
         </h3>
         <span className="text-[10px] bg-blue-300 text-blue-700 px-2 py-0.5 rounded-full">
