@@ -28,11 +28,8 @@ export default function SocialLinks() {
         id="theme-switch"
         className="card-color w-full h-12 sm:w-12 sm:h-12 rounded-md border border-color flex justify-center items-center text-fill-color text-xl gap-1 cursor-pointer"
       >
-        {isDarkMode ? (
-          <FaMoon className="text-fill-color text-xl" size={21} />
-        ) : (
-          <FaSun className="text-fill-color text-xl" size={21} />
-        )}
+        <FaSun className="theme-icon-sun" />
+        <FaMoon className="theme-icon-moon" />
       </button>
 
       <a
