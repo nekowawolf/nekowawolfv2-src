@@ -2,11 +2,11 @@ export async function fetchStats() {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-    const communityRes = await fetch(`${baseUrl}/airdrop/cryptocommunity/stats`);
+    const communityRes = await fetch(`${baseUrl}/cryptocommunity/stats`);
     const communityData = await communityRes.json();
     const communityCount = communityData.data?.total ?? 0;
 
-    const airdropRes = await fetch(`${baseUrl}/airdrop/allairdrop/stats`);
+    const airdropRes = await fetch(`${baseUrl}/allairdrop/stats`);
     const airdropData = await airdropRes.json();
     const airdropCount = airdropData.data?.total ?? 0;
 

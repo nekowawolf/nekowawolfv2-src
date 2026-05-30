@@ -26,7 +26,7 @@ export default function CryptoPriceTicker() {
   useEffect(() => {
     const fetchPrices = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/airdrop/price`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/price`);
         if (!response.ok) throw new Error('Failed to fetch data');
         const result = await response.json();
         setData(result);
